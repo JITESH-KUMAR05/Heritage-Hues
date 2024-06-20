@@ -22,7 +22,7 @@ def get_chat_model():
 
 def is_tourism_related(text):
     # Simple keyword-based filtering
-    keywords = ["tourism", "travel", "trip", "vacation", "holiday", "place", "recommend", "visit", "attraction","hello"]
+    keywords = ["tourism", "travel", "trip", "vacation", "holiday", "place", "recommend", "visit", "attraction","hello","explore"]
     return any(keyword in text.lower() for keyword in keywords)
 
 def get_chat_response(text):
