@@ -1,12 +1,13 @@
 // client/src/components/Navbar/Navbar.jsx
 import React from 'react';
 import './Navbar.css';
+import logo from './hhlogo.jpg'
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img src="/path-to-logo.png" alt="Heritage Hues Logo" className="logo" />
+        <img src={logo} alt="Heritage Hues Logo" className="logo" />
         <span>HERITAGE HUES</span>
       </div>
       <ul className="navbar-links">
