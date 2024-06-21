@@ -1,5 +1,8 @@
 import './Navbar.css';
 import logo from './hhlogo.jpg'
+import { Link } from 'react-router-dom';
+import Home from '../Home/Home';
+// import Destinations from '../Home/Destinations';
 
 const Navbar = () => {
   return (
@@ -10,13 +13,15 @@ const Navbar = () => {
       </div>
       <div className="navbar-links-container">
         <ul className="navbar-links">
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#activities">Activities</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <Link to="/" >Home</Link>
+          <Link to="/destination">Destination</Link>
+          <Link to="/philosophy">Philosophy</Link>
+          {/* <Link to="/about">About Us</Link> */}
+          <Link to="/contact">Contact</Link>
+          
         </ul>
       </div>
-      <button className="chat-button navbar-button">Chat with us</button>
+      <a href="http://127.0.0.1:5000/" target='_blank'><button className="chat-button navbar-button">Chat with us</button></a>
     </nav>
   );
 };
