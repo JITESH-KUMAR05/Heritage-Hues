@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 import random
 import google.generativeai as genai 
 
@@ -9,6 +10,7 @@ model = genai.GenerativeModel("models/gemini-1.5-flash")
 chat_session = model.start_chat(history=[])
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def index():
@@ -34,7 +36,7 @@ def recommend_places(interest):
 
 def is_tourism_related(text):
     # Simple keyword-based filtering
-    keywords = ["tourism", "travel", "trip", "vacation", "holiday", "place", "recommend", "visit", "attraction", "hello", "explore", "destination", "sightseeing", "adventure", "journey", "voyage", "excursion", "tour", "expedition", "jaunt", "outing", "ramble", "stroll", "walk", "hike", "trek", "climb", "mountaineer", "roam", "rove", "wander", "meander", "drift", "saunter", "amble", "promenade", "perambulate", "mosey", "traipse", "gallivant", "peregrinate", "galavant", "circumnavigate", "navigate", "pilgrimage", "odyssey", "quest", "explore", "discover", "search", "hunt", "scout", "look", "seek", "pursue", "probe", "delve", "investigate", "examine", "inspect", "survey", "scrutinize", "analyze", "study", "research"]
+    keywords = ["tourism", "travel", "trip", "vacation", "holiday", "place", "recommend", "visit", "attraction", "hello", "explore", "destination", "sightseeing", "adventure", "journey", "voyage", "excursion", "tour", "expedition", "jaunt", "outing", "ramble", "stroll", "walk", "hike", "trek", "climb", "mountaineer", "roam", "rove", "wander", "meander", "drift", "saunter", "amble", "promenade", "perambulate", "mosey", "traipse", "gallivant", "peregrinate", "galavant", "circumnavigate", "navigate", "pilgrimage", "odyssey", "quest", "explore", "discover", "search", "hunt", "scout", "look", "seek", "pursue", "probe", "delve", "investigate", "examine", "inspect", "survey", "scrutinize", "analyze", "study", "research", "explore", "discover", "search", "hunt", "scout", "look", "seek", "pursue", "probe", "delve", "investigate", "examine", "inspect", "survey", "scrutinize", "analyze", "study", "research", "food", "restaurant" , "hotel", "museum", "park", "beach", "mountain", "lake", "river", "ocean", "sea", "forest", "jungle", "desert", "island", "cave", "waterfall", "volcano", "canyon", "valley", "hill", "mountain", "peak", "summit", "glacier", "cliff", "cave", "cavern", "grotto", "waterfall", "cascade", "rapids", "stream", "river", "brook", "creek", "lake", "pond", "lagoon", "marsh", "swamp", "bog", "wetland", "ocean", "sea", "gulf", "bay", "strait", "channel", "sound", "fjord", "estuary", "delta", "beach", "shore", "coast", "island", "peninsula", "atoll", "archipelago", "reef", "cay", "key", "sandbar", "sandbank", "sandspit", "sand dune", "mountain", "hill", "volcano", "volcanic", "volcanism", "volcanology", "volcanologist", "volcanic eruption", "volcanic ash", "volcanic rock", "volcanic crater", "volcanic cone", "volcanic island", "volcanic arc", "volcanic belt", "volcanic chain", "volcanic hotspot", "volcanic vent", "volcanic gas", "volcanic mud", "volcanic lake", "volcanic spring"]
     return any(keyword in text.lower() for keyword in keywords)
 
 def extract_interest(text):
