@@ -2,7 +2,8 @@
 .home {
     position: relative;
     height: 100vh;
-    background: url('/path-to-background-image.jpg') no-repeat center center/cover;
+    /* background: url('./Hussain_Sagar_lake\,_Hyderabad.jpg') no-repeat center center/cover; */
+    width: 100vw;
   }
   
   .overlay {

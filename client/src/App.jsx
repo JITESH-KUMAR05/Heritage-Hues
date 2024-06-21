@@ -7,11 +7,10 @@ import Home from './components/Home/Home';
 const App = () => {
   return (
     <Router>
-      <div className='w-full pt-16'> {/* Adjust pt-16 based on your navbar height */}
+      <div className='w-full pt-16'> 
         <Navbar />
-       
         <AppRoutes />
-        <Home />
+        {/* <Home /> */}
       </div>
     </Router>
   );
