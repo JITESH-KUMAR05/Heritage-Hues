@@ -1,3 +1,4 @@
+
 import './Home.css';
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
       <div className="content w-full">
         <h1>EXPLORE</h1>
         <h2>INDIA</h2>
-        <input type="text" placeholder="           Search for your destination" className="search-box" />
+        <input type="text" placeholder="         Search for your destination" className="search-box" />
       </div>
     </div>
   );
