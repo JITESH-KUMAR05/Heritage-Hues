@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+import random
 import google.generativeai as genai 
 
 genai.configure(api_key='AIzaSyBjU63x29GgstqjzFp6D6pt1RwBhF6dCXQ')
@@ -20,10 +21,28 @@ def get_chat_model():
     except Exception as e:
         print(e)
 
+def recommend_places(interest):
+    # Example places categorized by interest
+    places = {
+        "nature": ["Yosemite National Park", "Grand Canyon", "Yellowstone National Park"],
+        "history": ["Rome", "Athens", "Cairo"],
+        "beach": ["Maldives", "Bora Bora", "Hawaii"],
+        "adventure": ["Queenstown", "Interlaken", "Costa Rica"]
+    }
+
+    return random.choice(places.get(interest, ["Sorry, I don't have recommendations for that interest."]))
+
 def is_tourism_related(text):
     # Simple keyword-based filtering
-    keywords = ["tourism", "travel", "trip", "vacation", "holiday", "place", "recommend", "visit", "attraction","hello","explore"]
+    keywords = ["tourism", "travel", "trip", "vacation", "holiday", "place", "recommend", "visit", "attraction", "hello", "explore", "destination", "sightseeing", "adventure", "journey", "voyage", "excursion", "tour", "expedition", "jaunt", "outing", "ramble", "stroll", "walk", "hike", "trek", "climb", "mountaineer", "roam", "rove", "wander", "meander", "drift", "saunter", "amble", "promenade", "perambulate", "mosey", "traipse", "gallivant", "peregrinate", "galavant", "circumnavigate", "navigate", "pilgrimage", "odyssey", "quest", "explore", "discover", "search", "hunt", "scout", "look", "seek", "pursue", "probe", "delve", "investigate", "examine", "inspect", "survey", "scrutinize", "analyze", "study", "research"]
     return any(keyword in text.lower() for keyword in keywords)
+
+def extract_interest(text):
+    interests = ["nature", "history", "beach", "adventure"]
+    for interest in interests:
+        if interest in text.lower():
+            return interest
+    return "general"
 
 def get_chat_response(text):
     global chat_session
@@ -34,6 +53,13 @@ def get_chat_response(text):
         return "I'm here to help with tourism-related questions. Please ask me about travel, places to visit, or recommendations."
 
     response = chat_session.send_message(text)
+
+    # Recommendation
+    if "recommend" in text.lower():
+        interest = extract_interest(text)
+        recommendation = recommend_places(interest)
+        response.text += f"\nI recommend visiting: {recommendation}"
+
     return response.text
 
 @app.route('/get', methods=['POST'])

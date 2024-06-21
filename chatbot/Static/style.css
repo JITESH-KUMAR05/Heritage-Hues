@@ -1,3 +1,4 @@
+/* style.css */
 body,html{
 	height: 100%;
 	margin: 0;
@@ -105,6 +106,11 @@ border-radius: 0 0 15px 15px !important;
 	height: 70px;
 	width: 70px;
 }
+.logo{
+	width: 80px;
+	height: 90px;
+	border-radius: 50%;
+}
 .img_cont_msg{
 	height: 40px;
 	width: 40px;
@@ -115,8 +121,8 @@ border-radius: 0 0 15px 15px !important;
 	width:15px;
 	background-color: #4cd137;
 	border-radius: 50%;
-	bottom: 0.2em;
-	right: 0.4em;
+	bottom: -0.70em;
+	right: -0.3em;
 	border:1.5px solid white;
 }
 .offline{
@@ -163,6 +169,21 @@ border-radius: 0 0 15px 15px !important;
 	padding: 10px;
 	position: relative;
 }
+
+.msg_cotainer ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.msg_cotainer li {
+    margin-bottom: 10px;
+}
+
+.msg_cotainer b {
+    font-weight: bold;
+}
+
+
 .msg_time{
 	position: absolute;
 	left: 0;

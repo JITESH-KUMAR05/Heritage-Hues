@@ -10,6 +10,7 @@ const Home = () => {
         <input type="text" placeholder="Search for your destination" className="search-box" />
       </div>
     </div>
+    
   );
 };
 
