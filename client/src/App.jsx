@@ -9,7 +9,7 @@ const App = () => {
     <Router>
       <div className='w-full pt-16'> {/* Adjust pt-16 based on your navbar height */}
         <Navbar />
-        <h1>hello world</h1>
+       
         <AppRoutes />
         <Home />
       </div>
