@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <img src={logo} alt="Heritage Hues Logo" className="logo" />
+        <img src={logo} alt="Heritage Hues Logo" className="logo rounded-[50%]" />
         <span>HERITAGE HUES</span>
       </div>
       <ul className="navbar-links">
