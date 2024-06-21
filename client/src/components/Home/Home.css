@@ -3,7 +3,8 @@
     position: relative;
     height: 100vh;
     /* background: url('./Hussain_Sagar_lake\,_Hyderabad.jpg') no-repeat center center/cover; */
-    width: 100vw;
+    /* width: 100vw; */
+    overflow: hidden;
   }
   
   .overlay {
@@ -43,5 +44,10 @@
     width: 300px;
     border: none;
     border-radius: 5px;
+    text-align: center; /* Centering text inside the input */
   }
   
+  /* Centering the placeholder text */
+  .search-box::placeholder {
+    text-align: center;
+  }
