@@ -24,6 +24,35 @@ body,html{
 .msg_card_body{
 	overflow-y: auto;
 }
+.msg_cotainer, .msg_cotainer_send {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.msg_cotainer_send {
+    background-color: #05728f;
+    color: white;
+}
+
+.msg_cotainer {
+    background-color: #ebebeb;
+    color: black;
+}
+
+.msg_time, .msg_time_send {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 8px;
+}
+
+.msg_time {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 .card-header{
 	border-radius: 15px 15px 0 0 !important;
 	border-bottom: 0 !important;
