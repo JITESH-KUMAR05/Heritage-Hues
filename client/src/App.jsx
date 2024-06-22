@@ -7,6 +7,8 @@ import Home from './components/Home/Home';
 import Destinations from './components/Home/Destinations';
 import Philosophy from './components/Home/Philosophy';
 import ContactUs from './components/Contact/ContactUs';
+import Feedback from './components/Feedback/Feedback';
+import Map from './components/Map/Map';
 
 
 const App = () => {
@@ -20,11 +22,13 @@ const App = () => {
         <Philosophy />
 
 
-
+        <Map />
 
        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
        <ContactUs />
        </div>
+
+       <Feedback />
 
       </div>
     </Router>
