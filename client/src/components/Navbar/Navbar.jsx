@@ -18,6 +18,7 @@ const Navbar = () => {
           <Link to="/philosophy">Philosophy</Link>
           {/* <Link to="/about">About Us</Link> */}
           <Link to="/contact">Contact</Link>
+          <Link to="/feedback">Feedback</Link>
           
         </ul>
       </div>
